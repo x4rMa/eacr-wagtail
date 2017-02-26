@@ -27,6 +27,17 @@ urlpatterns = [
     #    url(r'^pages/', include(wagtail_urls)),
 ]
 
+# Still not working :-(
+# had to remove '' on the beginning and changing "search_views.search" from 'views.search...'
+# from django.conf.urls.i18n import i18n_patterns
+# urlpatterns += i18n_patterns(
+#     # These URLs will have /<language_code>/ appended to the beginning
+#
+#     url(r'^search/$', search_views.search, name='search'),
+#    # url(r'^documents/', include(wagtaildocs_urls)),
+#
+#     url(r'', include(wagtail_urls)),
+# )
 
 if settings.DEBUG:
     from django.conf.urls.static import static

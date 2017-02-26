@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'wagtail.wagtailsearch',
     'wagtail.wagtailadmin',
     'wagtail.wagtailcore',
+    'wagtail.contrib.modeladmin',
 
     'modelcluster',
     'taggit',
@@ -50,10 +51,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'wagtailmenus',
+    'blog',
 ]
 
 MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -79,8 +84,10 @@ TEMPLATES = [
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
+                'django.template.context_processors.i18n',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'wagtailmenus.context_processors.wagtailmenus',
             ],
         },
     },
@@ -105,6 +112,11 @@ DATABASES = {
 
 LANGUAGE_CODE = 'en-us'
 
+LANGUAGES = (
+    ('en', 'English'),
+    ('cs', 'Czech'),
+)
+
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
@@ -112,6 +124,11 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale'),
+)
+
 
 
 # Static files (CSS, JavaScript, Images)
