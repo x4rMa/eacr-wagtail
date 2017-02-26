@@ -27,3 +27,5 @@ Now you should be up and running on `127.0.0.1:8000`
 
 # Deploy
 TBD
+
+**CREATE AND SEPARATE NEW SECRET KEY**
