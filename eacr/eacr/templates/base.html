@@ -1,5 +1,4 @@
 {% load static wagtailuserbar %}
-{% load menu_tags %}
 
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -24,26 +23,22 @@
 
         {# Global stylesheets #}
         <link rel="stylesheet" type="text/css" href="{% static 'css/eacr.css' %}">
-        <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
 
         {% block extra_css %}
-            {# Override this in templates to add extra stylesheets #}
+            {# Override this in templates to add extra css #}
+            <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
         {% endblock %}
     </head>
 
-    <body>
+    <body class="{% block body_class %}template-base{% endblock %}">
         {% wagtailuserbar %}
-        {% main_menu template="menus/main_menu.html" %}
-        <div class="container">
-            <div class="starter">
-            {% block content %}{% endblock %}
-            </div>
-        </div>
 
+            {% block base_content %}
+
+            {% endblock %}
 
         {# Global javascript #}
         <script type="text/javascript" src="{% static 'js/eacr.js' %}"></script>
-        <script src="{% static "js/bootstrap.min.js" %}"></script>
 
 {#        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"#}
 {#        integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY"#}
@@ -55,6 +50,7 @@
 
         {% block extra_js %}
             {# Override this in templates to add extra javascript #}
+            <script src="{% static "js/bootstrap.min.js" %}"></script>
         {% endblock %}
     </body>
 </html>

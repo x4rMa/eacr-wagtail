@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "home/home_page.html" %}
 
 {% load wagtailcore_tags %}
 
@@ -10,6 +10,6 @@
 
     <div class="intro">{{ page.intro }}</div>
     <hr>
-    {{ page.body|richtext }}
+    {% include_block page.body %}
 
 {% endblock %}
