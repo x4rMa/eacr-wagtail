@@ -1,4 +1,4 @@
-# efektivni-altruismus.cz on Wagtail
+# efektivnialtruismus.cz on Wagtail
 
 This page is for efektivni-altruismus.cz. It is based on Python `wagtail` CMS.
 
@@ -29,11 +29,12 @@ pip install -r requirements.txt
 cd eacr
 python manage.py makemigrations
 python manage.py migrate
-python manage.py createsuperuser
+python manage.py createsuperuser # whatever you want, but remember it
 python manage.py runserver
 ```
 
-Now you should be up and running on `127.0.0.1:8000`
+Now you should be up and running on `127.0.0.1:8000`. You can sign in to admin interface on `127.0.0.1:8000/admin`
+with username (not email) and password you have created above (`createsuperuser` part).
 
 # Deploy
 TBD
