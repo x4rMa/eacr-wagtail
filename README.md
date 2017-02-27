@@ -14,13 +14,16 @@ have strong community and documentation.
 2. No roles management (e.g. moderators/editors)
 
 # Development
-I assume you have a modern Python installed (this is tested on 
-version 3.6, but anything 3.2+ _should_ work, although not tested at all).
+I assume you have a modern Python installed. This is tested on 
+version 3.6, but anything 3.2+ _should_ work, 
+although not tested at all - you have to change `pyvenv-3.6` command below to
+whatever version of virtualenv you have/use. So e.g. if you have `virtualenv` 
+installed, just use `virtualenv .venv` instead of `pyvenv-3.6 .venv`.
 
 ```
 git clone git@github.com:hnykda/eacr-wagtail.git
 cd eacr-wagtail
-pyvenv-3.6 .venv
+pyvenv-3.6 .venv 
 source .venv/bin/activate
 pip install -r requirements.txt
 cd eacr
